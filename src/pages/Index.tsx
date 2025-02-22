@@ -2,13 +2,34 @@
 import { articles } from "../data/articles";
 import { NewsFeed } from "../components/NewsFeed";
 
+const categories = [
+  { id: 'recommended', label: 'Recommended' },
+  { id: 'cryptocurrency', label: 'Cryptocurrency' },
+  { id: 'technology', label: 'Technology' },
+  { id: 'politics', label: 'Politics' },
+  { id: 'sports', label: 'Sports' },
+  { id: 'lifestyle', label: 'Lifestyle' }
+];
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">Latest News</h1>
-          <p className="mt-2 text-gray-600">Stay updated with the latest developments</p>
+    <div className="min-h-screen bg-white">
+      <header className="text-center py-12">
+        <h1 className="text-5xl font-bold text-[#0B1C2C] mb-3">Latest Tech News</h1>
+        <p className="text-xl text-gray-600">Stay updated with the latest in technology and cybersecurity</p>
+        
+        <div className="flex justify-center gap-4 mt-8 flex-wrap px-4">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+                ${category.id === 'recommended' 
+                  ? 'bg-[#0B1C2C] text-white' 
+                  : 'bg-gray-50 text-gray-600 hover:bg-gray-100'}`}
+            >
+              {category.label}
+            </button>
+          ))}
         </div>
       </header>
       <NewsFeed articles={articles} />
