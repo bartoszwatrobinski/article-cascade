@@ -1,20 +1,22 @@
 
-import { useState } from "react";
-import { Article } from "../types/article";
-import { ArticleCard } from "./ArticleCard";
-import { motion } from "framer-motion";
+"use client"
+
+import { useState } from "react"
+import { Article } from "@/types/article"
+import { ArticleCard } from "./ArticleCard"
+import { motion } from "framer-motion"
 
 interface NewsFeedProps {
-  articles: Article[];
+  initialArticles: Article[]
 }
 
-export const NewsFeed = ({ articles }: NewsFeedProps) => {
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+export const NewsFeed = ({ initialArticles }: NewsFeedProps) => {
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null)
 
   const handleArticleClick = (article: Article) => {
-    setSelectedArticle(article);
+    setSelectedArticle(article)
     // TODO: Implement navigation to full article view
-  };
+  }
 
   return (
     <motion.div 
@@ -23,7 +25,7 @@ export const NewsFeed = ({ articles }: NewsFeedProps) => {
       className="max-w-3xl mx-auto px-4 py-6 space-y-4"
     >
       <div className="space-y-4">
-        {articles.map((article) => (
+        {initialArticles.map((article) => (
           <ArticleCard
             key={article.id}
             article={article}
@@ -32,5 +34,5 @@ export const NewsFeed = ({ articles }: NewsFeedProps) => {
         ))}
       </div>
     </motion.div>
-  );
-};
+  )
+}

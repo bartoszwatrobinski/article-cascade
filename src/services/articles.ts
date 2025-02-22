@@ -1,12 +1,9 @@
-
-import { Article } from '../types/article';
-
-// This would be your actual API endpoint
-const API_URL = 'https://api.example.com/articles';
-
-export const fetchArticles = async (): Promise<Article[]> => {
-  // For now, return the static data since we don't have a real API
-  // In a real app, this would be: const response = await fetch(API_URL);
+export const fetchArticles = async () => {
+  // In a real app, this would be a fetch to your API
+  // const res = await fetch('https://api.example.com/articles')
+  // return res.json()
+  
+  // For now, return the static data
   return [
     {
       id: "1",
@@ -35,5 +32,5 @@ export const fetchArticles = async (): Promise<Article[]> => {
       category: "technology",
       imageUrl: "/placeholder.svg"
     }
-  ];
-};
+  ]
+}
