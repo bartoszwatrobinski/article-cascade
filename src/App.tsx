@@ -12,11 +12,9 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <RouterProvider router={router} />
-      </TooltipProvider>
+      <RouterProvider router={router} />
+      <Toaster />
+      <Sonner />
     </QueryClientProvider>
   );
 }
