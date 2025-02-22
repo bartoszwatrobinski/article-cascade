@@ -1,7 +1,8 @@
 
-import { articles } from "../data/articles";
 import { NewsFeed } from "../components/NewsFeed";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { fetchArticles } from "../services/articles";
 
 const categories = [
   { id: 'recommended', label: 'Recommended' },
@@ -15,9 +16,26 @@ const categories = [
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('recommended');
 
-  const filteredArticles = selectedCategory === 'recommended' 
+  const { data: articles, isLoading, error } = useQuery({
+    queryKey: ['articles'],
+    queryFn: fetchArticles
+  });
+
+  const filteredArticles = articles && (selectedCategory === 'recommended' 
     ? articles 
-    : articles.filter(article => article.category === selectedCategory);
+    : articles.filter(article => article.category === selectedCategory));
+
+  if (isLoading) {
+    return <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-xl text-gray-600">Loading articles...</div>
+    </div>;
+  }
+
+  if (error) {
+    return <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-xl text-red-600">Error loading articles</div>
+    </div>;
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -40,7 +58,7 @@ const Index = () => {
           ))}
         </div>
       </header>
-      <NewsFeed articles={filteredArticles} />
+      <NewsFeed articles={filteredArticles || []} />
     </div>
   );
 };
