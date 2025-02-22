@@ -8,7 +8,7 @@ export const articles: Article[] = [
     excerpt: "Cryptocurrency exchange Bybit on Friday revealed that a 'sophisticated' attack led to the theft of over $1.46 billion worth of cryptocurrency from one of its Ethereum cold wallets...",
     content: "Full article content here...",
     date: "Feb 22, 2025",
-    category: "Financial Crime / Cryptocurrency",
+    category: "cryptocurrency",
     imageUrl: "/lovable-uploads/45e9cf11-f97a-44e8-aa4f-7b09870b4efe.png"
   },
   {
@@ -17,7 +17,7 @@ export const articles: Article[] = [
     excerpt: "Master in-demand techniques at our largest training event in 2025. Explore 50+ courses. Train in person to claim your $769 savings!",
     content: "Full article content here...",
     date: "Feb 22, 2025",
-    category: "Cyber Security / Training",
+    category: "technology",
     imageUrl: "/placeholder.svg"
   },
   {
@@ -26,7 +26,7 @@ export const articles: Article[] = [
     excerpt: "OpenAI on Friday revealed that it banned a set of accounts that used its ChatGPT tool to develop suspected artificial intelligence surveillance tools...",
     content: "Full article content here...",
     date: "Feb 22, 2025",
-    category: "AI / Security",
+    category: "technology",
     imageUrl: "/placeholder.svg"
   }
 ];
