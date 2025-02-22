@@ -33,6 +33,9 @@ export const ArticleCard = ({ article, onClick }: ArticleCardProps) => {
           <h3 className="text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
             {article.title}
           </h3>
+          <p className="text-sm text-gray-600 line-clamp-1 mt-1">
+            {article.excerpt}
+          </p>
         </div>
       </div>
     </motion.div>
