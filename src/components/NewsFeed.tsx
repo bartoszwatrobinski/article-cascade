@@ -10,12 +10,20 @@ interface NewsFeedProps {
   initialArticles: Article[]
 }
 
-export const NewsFeed = ({ initialArticles }: NewsFeedProps) => {
+export const NewsFeed = ({ initialArticles = [] }: NewsFeedProps) => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null)
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article)
     // TODO: Implement navigation to full article view
+  }
+
+  if (!initialArticles || initialArticles.length === 0) {
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-6 text-center text-gray-600">
+        Loading articles...
+      </div>
+    )
   }
 
   return (
