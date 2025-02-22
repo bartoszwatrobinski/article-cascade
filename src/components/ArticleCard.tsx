@@ -18,7 +18,7 @@ export const ArticleCard = ({ article, onClick }: ArticleCardProps) => {
       onClick={onClick}
       className="group cursor-pointer"
     >
-      <div className="bg-white rounded-lg overflow-hidden transition-shadow duration-300 flex h-36">
+      <div className="bg-white rounded-lg overflow-hidden transition-shadow duration-300 flex h-40 border border-gray-200 shadow-sm">
         <div className="relative w-48 overflow-hidden">
           <img
             src={article.imageUrl}
@@ -26,7 +26,7 @@ export const ArticleCard = ({ article, onClick }: ArticleCardProps) => {
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <div className="p-4 flex-1">
+        <div className="p-6 flex-1">
           <span className="inline-block px-2 py-0.5 text-xs font-medium text-gray-600 mb-2">
             {article.category}
           </span>
