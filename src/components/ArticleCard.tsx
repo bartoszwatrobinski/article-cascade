@@ -18,25 +18,22 @@ export const ArticleCard = ({ article, onClick }: ArticleCardProps) => {
       onClick={onClick}
       className="group cursor-pointer"
     >
-      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
-        <div className="relative h-48 overflow-hidden">
+      <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex h-32">
+        <div className="relative w-48 overflow-hidden">
           <img
             src={article.imageUrl}
             alt={article.title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <div className="p-6">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-50 text-blue-600">
-              {article.category}
-            </span>
-            <span className="text-sm text-gray-500">{article.date}</span>
-          </div>
-          <h3 className="text-xl font-semibold mb-2 text-gray-800 line-clamp-2 group-hover:text-blue-600 transition-colors">
+        <div className="p-4 flex-1">
+          <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-blue-50 text-blue-600 mb-2">
+            {article.category}
+          </span>
+          <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 group-hover:text-blue-600 transition-colors">
             {article.title}
           </h3>
-          <p className="text-gray-600 line-clamp-2 text-sm">
+          <p className="text-gray-600 line-clamp-1 text-sm mt-1">
             {article.excerpt}
           </p>
         </div>

@@ -20,9 +20,9 @@ export const NewsFeed = ({ articles }: NewsFeedProps) => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-4xl mx-auto px-4 py-8 space-y-8"
+      className="max-w-3xl mx-auto px-4 py-6 space-y-4"
     >
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-1">
+      <div className="space-y-4">
         {articles.map((article) => (
           <ArticleCard
             key={article.id}
